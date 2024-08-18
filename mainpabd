@@ -1,0 +1,20 @@
+import usuariopabd
+
+#pedir dados ao usuario
+usuario = input("digite seu nome de usuario: ")
+senha = input("digite sua senha: ")
+
+#utilizar função para conectar ao banco de dados
+usuariopabd.connect_database()
+
+#utilizar função para verificação de registro no banco de dados
+teste = usuariopabd.verify_database(usuario, senha)
+
+#verificação do boolean para retorno ao usuario
+if teste == True:
+    print("corresponde a um registro no banco de dados")
+else:
+    print(" não corresponde a um registro no banco de dados")
+
+#utilizar função para desconectar do banco de dados
+usuariopabd.disconnect_database
